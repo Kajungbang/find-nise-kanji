@@ -42,8 +42,9 @@ python3 mistake_kanji_check.py 調べたいファイル.txt
 
 ## 解説記事
 
-開発の経緯・失敗談・設計判断の詳細は Zenn の解説記事をどうぞ（近日公開・公開後にリンクを追記します）。
+開発の経緯・失敗談・設計判断の詳細は Zenn の解説記事をどうぞ。
 
+- [⚠️混ぜるな危険。"日本語ではない文字"の対策方法](https://zenn.dev/kajungbang/articles/2f3f689bcddeab) ←本ツールの解説記事
 - [外部脳シリーズ第1弾：エンジニアじゃない研究者がClaude × Notion で「外部脳」を作った話](https://zenn.dev/kajungbang/articles/5c00f3bf7d7416)
 
 ## ライセンス
