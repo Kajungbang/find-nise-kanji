@@ -48,4 +48,6 @@ python3 mistake_kanji_check.py 調べたいファイル.txt
 
 ## ライセンス
 
-MIT License
+[MIT License](./LICENSE) —— 商用・非商用を問わず、複製・改変・再配布・自作ツールへの組み込みが自由です（条件は著作権表示とライセンス文の保持のみ・無保証）。
+
+要注意リストの追加候補（新しく見つけた間違い文字）や改良のご提案は、Issue / Pull Request で歓迎します。
