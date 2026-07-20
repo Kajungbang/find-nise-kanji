@@ -1,5 +1,5 @@
-# ニセ漢字チェッカー（コピペで動きます・Python標準機能だけ使用）
-# 使い方: python3 nise_kanji_check.py 調べたいファイル.txt
+# 間違い文字チェッカー（コピペで動きます・Python標準機能だけ使用）
+# 使い方: python3 mistake_kanji_check.py 調べたいファイル.txt
 import sys
 
 def is_japanese(ch):
@@ -34,10 +34,10 @@ def check(text):
 
 if __name__ == "__main__":
     if len(sys.argv) < 2:
-        print("使い方: python3 nise_kanji_check.py 調べたいファイル.txt"); sys.exit(1)
+        print("使い方: python3 mistake_kanji_check.py 調べたいファイル.txt"); sys.exit(1)
     text = open(sys.argv[1], encoding="utf-8").read()
     hits = check(text)
     if not hits:
-        print("ニセ漢字は見つかりませんでした（※現在の手段では未検出、の意味です）")
+        print("間違い文字は未検出")
     for lineno, ch, ctx in hits:
         print(f"{lineno}行目: 「{ch}」 ← この行にあります: {ctx}")
