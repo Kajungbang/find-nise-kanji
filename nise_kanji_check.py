@@ -22,8 +22,9 @@ def check(text):
     found = []
     for lineno, line in enumerate(text.splitlines(), 1):
         for ch in line:
-            if not ("一" <= ch <= "鿿" or "㐀" <= ch <= "䶿"):
-                continue  # 漢字でなければ対象外
+            if not ("一" <= ch <= "鿿" or "㐀" <= ch <= "䶿"
+                    or "가" <= ch <= "힣" or "ㄱ" <= ch <= "ㆎ"):
+                continue  # 漢字・ハングルでなければ対象外
             if (not is_japanese(ch)) or ch in SIMP:
                 found.append((lineno, ch, line.strip()[:30]))
     return found
