@@ -22,10 +22,13 @@ def check(text):
     found = []
     for lineno, line in enumerate(text.splitlines(), 1):
         for ch in line:
+            # キリル文字はJISの名簿に載っているが、日本語の文章ではまず誤り（問答無用で検出）
+            # ※ロシア語の原文引用がある文章を調べるときは、この判定を外してください
+            is_cyrillic = "Ѐ" <= ch <= "ӿ"
             if not ("一" <= ch <= "鿿" or "㐀" <= ch <= "䶿"
-                    or "가" <= ch <= "힣" or "ㄱ" <= ch <= "ㆎ"):
-                continue  # 漢字・ハングルでなければ対象外
-            if (not is_japanese(ch)) or ch in SIMP:
+                    or "가" <= ch <= "힣" or "ㄱ" <= ch <= "ㆎ" or is_cyrillic):
+                continue  # 漢字・ハングル・キリル文字でなければ対象外
+            if is_cyrillic or (not is_japanese(ch)) or ch in SIMP:
                 found.append((lineno, ch, line.strip()[:30]))
     return found
 
